@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIP-BOY RADIO 3000</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="stations.js"></script>
+</head>
+
+<body>
+    <div class="crt-overlay"></div>
+    <div class="screen-curvature"></div>
+
+    <div class="terminal-container">
+        <!-- Sidebar Panel -->
+        <aside class="sidebar-panel frame-box">
+            <div class="frame-title">[ COMM-LINK ]</div>
+
+            <div class="search-container">
+                <span class="search-prompt">SEARCH:</span>
+                <input type="text" id="search-input" placeholder="FREQUENCY_">
+            </div>
+
+            <ul id="station-list" class="station-list">
+                <!-- Stations injected via JS -->
+            </ul>
+        </aside>
+
+        <!-- Main Interface -->
+        <main class="main-panel">
+            <header class="terminal-header">
+                <div class="header-line">----------------------------------------</div>
+                <h1>PIP-BOY 3000</h1>
+                <div class="system-status">
+                    <span>> SIGNAL: ACTIVE</span>
+                    <span id="clock">00:00:00</span>
+                </div>
+            </header>
+
+            <div class="radio-interface">
+                <!-- Visualizer -->
+                <div class="visualizer-section frame-box">
+                    <div class="frame-title">[ VISUALIZER ]</div>
+                    <canvas id="visualizer"></canvas>
+                </div>
+
+                <!-- Info Display -->
+                <div class="info-section">
+                    <div class="now-playing frame-box">
+                        <div class="frame-title">[ STATUS ]</div>
+                        <div class="status-row">
+                            <span class="label">STATUS:</span>
+                            <span class="value" id="signal-status">STANDBY</span>
+                        </div>
+                        <div class="status-row">
+                            <span class="label">TUNED:</span>
+                            <span class="value blink" id="current-station">---</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls-section">
+                    <button id="power-btn" class="terminal-btn">INITIALIZE</button>
+
+                    <div class="control-group">
+                        <label for="volume">VOL</label>
+                        <input type="range" id="volume" min="0" max="1" step="0.05" value="0.5">
+                    </div>
+                </div>
+            </div>
+
+            <footer class="terminal-footer">
+                <div class="scrolling-text">
+                    > VAULT-TEC CONNECTED. STAND BY FOR EMERGENCY BROADCASTS. < </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="source.js"></script>
+</body>
+
+</html>
