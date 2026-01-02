@@ -213,6 +213,9 @@ function playStation(index) {
 
     statusSignal.textContent = "BROADCASTING";
     statusSignal.classList.remove('blink');
+
+    // Dispatch event for Gimmicks module
+    window.dispatchEvent(new CustomEvent('station:change', { detail: { index } }));
 }
 
 function updateVolume() {
